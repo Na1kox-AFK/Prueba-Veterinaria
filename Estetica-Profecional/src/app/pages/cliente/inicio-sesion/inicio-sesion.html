@@ -1,0 +1,57 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Admin - Clínica Estética</title>
+  <link rel="stylesheet" href="inicio-secion.css" />
+</head>
+<div class="background-gradient">
+  <!-- Menú Superior -->
+  <div class="floating-menu-container">
+    <header class="main-header">
+      <div class="sticky-toolbar">
+        <img src="../../../assent/imagenes/logo/logo.jpg" alt="Logo" class="logo">
+        <nav class="menu-links">
+          <a href="../home/home.html">Inicio</a>
+          <a href="/servicios.html">Servicios</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="" >Cliente</a>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <!-- Hero -->
+  <section class="admin-hero">
+    <h1 class="admin-title">¡Bienvenido!</h1>
+    <p class="admin-subtitle">Inicia sesión o crea tu cuenta para recibir descuentos exclusivos</p>
+  </section>
+
+  <!-- Formulario de login / registro -->
+  <section class="admin-options">
+    <div class="admin-card" id="login-card">
+      <h3>Iniciar Sesión</h3>
+      <p>Ingresa a tu cuenta para acceder a beneficios.</p>
+      <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Correo electrónico" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #eab1c6;">
+        <input type="password" id="loginPassword" placeholder="Contraseña" required style="width:100%;padding:10px;margin-bottom:20px;border-radius:8px;border:1px solid #eab1c6;">
+        <button type="submit" class="cta-btn">Entrar</button>
+      </form>
+      <p style="margin-top:15px;">¿No tienes cuenta? <a href="#" id="showRegister" style="color:#d6336c;font-weight:600;">Regístrate aquí</a></p>
+    </div>
+
+    <div class="admin-card" id="register-card" style="display:none;">
+      <h3>Crear Cuenta</h3>
+      <p>Regístrate como cliente frecuente y recibe descuentos.</p>
+      <form id="registerForm">
+        <input type="text" id="registerName" placeholder="Nombre completo" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #eab1c6;">
+        <input type="email" id="registerEmail" placeholder="Correo electrónico" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #eab1c6;">
+        <input type="password" id="registerPassword" placeholder="Contraseña" required style="width:100%;padding:10px;margin-bottom:20px;border-radius:8px;border:1px solid #eab1c6;">
+        <button type="submit" class="cta-btn">Registrarme</button>
+      </form>
+      <p style="margin-top:15px;">¿Ya tienes cuenta? <a href="#" id="showLogin" style="color:#d6336c;font-weight:600;">Inicia sesión</a></p>
+    </div>
+  </section>
+</div>
+
+<!-- Conecta tu JS -->
+<script src="inicio-sesion.js"></script>
