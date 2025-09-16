@@ -46,40 +46,27 @@ body {
 .main-header {
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
   border-radius: 40px;
+  background: #fff;
   box-shadow: 0 4px 24px rgba(234, 177, 198, 0.15);
-  background: #fff; /* Fondo blanco */
-  pointer-events: auto;
-  display: flex;
-  align-items: center;
 }
 
 /* Toolbar interna */
 .sticky-toolbar {
-  min-height: 40px;
-  border-radius: 40px;
-  background: #fff !important; /* Fondo blanco */
-  --background: #fff;
-  --color: #d6336c; /* Texto rosado */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
+  padding: 12px 24px;
 }
 
 /* Logo */
 .logo {
   height: 56px;
   width: 56px;
-  object-fit: cover;
-  margin: 8px 32px 8px 16px;
   border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(234, 177, 198, 0.15);
-  background: #fff;
-  padding: 4px;
-  display: block;
+  object-fit: cover;
 }
+
 /* Links del menú: evitar quiebre de línea */
 .menu-links {
   display: flex;
@@ -229,8 +216,8 @@ main {
 
 .about-img {
   width: 100%;
-  max-width: 700px;
-  height: 700px;
+  max-width: 800px;
+  height: 620px;
   border-radius: 60px; 
   box-shadow: 0 12px 32px rgba(234, 177, 198, 0.25), 0 2px 8px rgba(0,0,0,0.08); 
   object-fit: cover;
