@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Admin - Clínica Estética</title>
+  <link rel="stylesheet" href="home-admin.css" />
+</head>
+<body>
+  <!-- ===== Menú Superior ===== -->
+  <div class="floating-menu-container">
+    <header class="main-header">
+      <div class="sticky-toolbar">
+        <img src="../../../assent/imagenes/logo/logo.jpg" alt="Clínica Estética" class="logo" />
+        <nav class="menu-links">
+          <a href="home-admin.html">Home</a>
+          <a href="../clientes/clientes.html">Clientes</a>
+          <a href="../servicios-crud/servicios-crud.html">Servicios</a>
+          <a href="../usuario/usuario.html" >Usuario</a>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <!-- ===== Contenido Principal ===== -->
+  <main class="background-gradient">
+    <section class="admin-hero">
+      <h1 class="admin-title">Panel de Administración</h1>
+      <p class="admin-subtitle">Gestiona tu clínica estética desde un solo lugar</p>
+    </section>
+
+    <section class="admin-options">
+      <div class="admin-card">
+        <img src="../../../assent/imagenes/fondo/servicios/fondo_servicio.png" alt="Servicios" />
+        <h3>Servicios</h3>
+        <p>Agrega, edita o elimina los servicios ofrecidos en la clínica.</p>
+        <a href="../servicios-crud/servicios-crud.html" class="cta-btn">Gestionar Servicios</a>
+      </div>
+
+      <div class="admin-card">
+        <img src="imagenes/iconos/clientes.png" alt="Clientes" />
+        <h3>Clientes</h3>
+        <p>Consulta la lista completa de clientes y su información.</p>
+        <a href="../clientes/clientes.html" class="cta-btn">Ver Clientes</a>
+      </div>
+
+      <div class="admin-card">
+        <img src="imagenes/iconos/usuario.png" alt="Usuario" />
+        <h3>RRSS</h3>
+        <p>Edita la información de tu cuenta de administrador.</p>
+        <a href="../usuario/usuario.html" class="cta-btn">Configurar Perfil</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

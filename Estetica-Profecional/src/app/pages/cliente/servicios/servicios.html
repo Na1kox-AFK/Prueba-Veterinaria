@@ -1,0 +1,94 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Cliente - Servicios</title>
+  <link rel="stylesheet" href="servicios.css" />
+</head>
+<!-- Menú Superior -->
+  <div class="floating-menu-container">
+    <header class="main-header">
+      <div class="sticky-toolbar">
+        <img src="../../../assent/imagenes/logo/logo.jpg" alt="Sala de espera" class="logo" />
+        <nav class="menu-links">
+          <a href="../home/home.html">Home</a>
+          <a href="../nosotros/nosotros.html">Nosotros</a>
+          <a href="../blogs/blogs.html">Blogs</a>
+          <a href="../contacto/contacto.html">Contacto</a>
+          <a href="../inicio-sesion/inicio-sesion.html">Iniciar Sesión</a>
+          <a href="../servicios/servicios.html">Servicios</a>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+<!-- Contenido principal -->
+<div class="background-gradient">
+  <!-- Hero principal -->
+  <section class="admin-hero">
+    <h1 class="highlight">Servicios</span></h1>
+    <p class="admin-subtitle">Elige tu servicio y agenda tu hora con nosotros</p>
+  </section>
+
+  <!-- Contenedores de servicios -->
+  <section class="admin-options">
+    <!-- Card 1 -->
+    <div class="admin-card">
+      <img src=".././../../assent/imagenes/fondo/servicios/1.png" alt="Cosmetología">
+      <h3>Cosmetología</h3>
+      <p>Tratamientos faciales y corporales personalizados para tu piel.</p>
+      <a href="#" class="cta-btn" onclick="agendar('Cosmetología')">Agendar Hora</a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="admin-card">
+      <img src=".././../../assent/imagenes/fondo/servicios/2.png" alt="Manicure y pedicure">
+      <h3>Manicure y Pedicure</h3>
+      <p>Cuida tus manos y pies con nuestro servicio especializado.</p>
+      <a href="#" class="cta-btn" onclick="agendar('Manicure y Pedicure')">Agendar Hora</a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="admin-card">
+      <img src=".././../../assent/imagenes/fondo/servicios/3.png" alt="Maquillaje Profesional">
+      <h3>Maquillaje Profesional</h3>
+      <p>Para eventos, sesiones de fotos o simplemente lucir increíble.</p>
+      <a href="#" class="cta-btn" onclick="agendar('Maquillaje Profesional')">Agendar Hora</a>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="admin-card">
+      <img src=".././../../assent/imagenes/fondo/servicios/4.png" alt="Tratamientos Corporales y Spa">
+      <h3>Tratamientos Corporales y Spa</h3>
+      <p>Relájate y revitaliza tu cuerpo con nuestros tratamientos.</p>
+      <a href="#" class="cta-btn" onclick="agendar('Tratamientos Corporales y Spa')">Agendar Hora</a>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="admin-card">
+      <img src=".././../../assent/imagenes/fondo/servicios/5.png" alt="Cortes, estilismo y color">
+      <h3>Corte, Estilismo y Color</h3>
+      <p>Transforma tu look con nuestros estilistas expertos.</p>
+      <a href="#" class="cta-btn" onclick="agendar('Corte, Estilismo y Color')">Agendar Hora</a>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="admin-card">
+      <img src=".././../../assent/imagenes/fondo/servicios/6.png" alt="Tratamientos capilares">
+      <h3>Tratamientos Capilares</h3>
+      <p>Recupera la salud y brillo de tu cabello con nosotros.</p>
+      <a href="#" class="cta-btn" onclick="agendar('Tratamientos Capilares')">Agendar Hora</a>
+    </div>
+  </section>
+
+  <div class="custom-separator">
+    <span class="separator-text">La ciencia de sentirse bien</span>
+  </div>
+</div>
+
+<script>
+  function agendar(servicio) {
+    alert('Has elegido agendar: ' + servicio);
+    // aquí podrías redirigir a una página de agenda real o abrir un modal
+    // window.location.href = "/agendar?servicio=" + encodeURIComponent(servicio);
+  }
+</script>
