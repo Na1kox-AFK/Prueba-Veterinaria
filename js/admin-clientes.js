@@ -1,0 +1,1 @@
+window.addEventListener('DOMContentLoaded', () => {const cliente = JSON.parse(localStorage.getItem('cliente'));if(cliente){const tbody = document.querySelector('#tablaClientes tbody');const row = `<tr><td>${cliente.nombre}</td><td>${cliente.fecha}</td><td>${cliente.hora}</td></tr>`;tbody.innerHTML += row;}});

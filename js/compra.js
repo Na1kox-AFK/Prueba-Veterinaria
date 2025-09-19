@@ -1,0 +1,1 @@
+document.getElementById('formCompra').addEventListener('submit', e => {e.preventDefault();const servicio = document.getElementById('servicio').value;const cantidad = document.getElementById('cantidad').value;document.getElementById('resultado').innerText = `Compra realizada: ${cantidad} x ${servicio}`;});
