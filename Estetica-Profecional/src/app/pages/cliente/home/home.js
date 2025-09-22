@@ -4,6 +4,7 @@
 // Función del botón "Agenda tu hora"
 function agendar() {
   alert('Aquí podrías redirigir al formulario de reservas.');
+  window.location.href = "../agendar-hora/agendar-hora.html";
 }
 
 // === Todo se ejecuta al cargar el DOM ===

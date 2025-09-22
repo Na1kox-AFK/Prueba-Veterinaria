@@ -1,156 +1,228 @@
-/* Importación de fuentes de Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500&display=swap');
+/* ===== RESET + Variables ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
 
-/* Estilos Generales */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f2f5; /* Fondo suave y moderno */
-    color: #333;
-    line-height: 1.6;
+:root {
+  --pink: #d6336c;
+  --light-pink: #f7e6eb;
+  --accent: #fdb6c3;
+  --bg-gradient: linear-gradient(135deg, var(--light-pink) 0%, #f8c6c8 50%, #eab1c6 100%);
+  --white: #fff;
+  --text-dark: #444;
+  --card-shadow: 0 8px 32px rgba(234, 177, 198, 0.08);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
+/* ===== Menú superior (idéntico al de home.css) ===== */
+.floating-menu-container {
+  position: fixed;
+  top: 32px;
+  width: 100%;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
 }
 
-/* Encabezado Principal */
+/* El pill blanco */
 .main-header {
-    background-color: #2c3e50; /* Azul oscuro elegante */
-    color: #fff;
-    padding: 60px 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 40px;
+  background: #fff; /* muy importante */
+  box-shadow: 0 4px 24px rgba(234, 177, 198, 0.15);
 }
 
+.sticky-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+
+
+/* Logo */
+.logo {
+  height: 56px;
+  width: 56px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* Links del menú */
+.menu-links {
+  display: flex;
+  gap: 18px;
+}
+
+.menu-links a {
+  color: var(--pink);
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.menu-links a:hover,
+.menu-links a.active {
+  background: var(--accent);
+  color: var(--white);
+}
+
+/* ===== Fondo general ===== */
+body {
+  background: var(--bg-gradient);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  color: var(--text-dark);
+  /* evita que el header tape el contenido */
+  padding-top: 120px; /* mismo offset que en home.css */
+}
+
+/* ===== Contenedor principal ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+/* ===== Page Header / Títulos ===== */
+.page-header,
 .main-header h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3em;
-    margin-bottom: 10px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
 
-.main-header p {
-    font-size: 1.2em;
-    opacity: 0.9;
+.page-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--pink);
+  margin-bottom: 10px;
 }
 
-/* Sección de Equipo */
+.page-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* ===== Cards / Miembros equipo ===== */
 .team-section {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
-    justify-content: center; /* Centra los miembros del equipo */
-    gap: 30px; /* Espacio entre los miembros */
-    margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
 }
 
 .team-member {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    text-align: center;
-    width: 300px; /* Ancho fijo para cada tarjeta de miembro */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--white);
+  border-radius: 32px;
+  box-shadow: var(--card-shadow);
+  padding: 30px 20px;
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-member:hover {
-    transform: translateY(-10px); /* Efecto flotante al pasar el ratón */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 48px rgba(234, 177, 198, 0.35), 0 4px 16px rgba(0,0,0,0.12);
 }
 
+/* Foto circular */
 .member-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* Forma circular para la foto */
-    overflow: hidden;
-    margin: 0 auto 20px auto;
-    border: 4px solid #3498db; /* Borde azul para la foto */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px auto;
+  border: 4px solid var(--pink);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .member-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
+/* Texto */
 .team-member h2 {
-    color: #3498db; /* Azul para el nombre */
-    margin-bottom: 5px;
-    font-family: 'Montserrat', sans-serif;
+  color: var(--pink);
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  font-weight: 700;
 }
 
 .team-member h3 {
-    color: #555;
-    font-size: 1em;
-    font-weight: 500;
-    margin-top: 0;
-    margin-bottom: 15px;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
 }
 
 .team-member p {
-    font-size: 0.95em;
-    color: #666;
-    margin-bottom: 20px;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
 }
 
+/* Enlaces sociales */
 .social-links a {
-    display: inline-block;
-    background-color: #34495e; /* Fondo oscuro para los enlaces sociales */
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin: 0 5px;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 8px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 0 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .social-links a:hover {
-    background-color: #2c3e50;
+  background-color: var(--pink);
 }
 
-/* Pie de Página */
+/* ===== Footer ===== */
 .main-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 25px 20px;
-    margin-top: 50px;
-    font-size: 0.9em;
+  background: var(--white);
+  color: #666;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 -2px 8px rgba(234, 177, 198, 0.08);
 }
 
-/* Media Queries para Responsividad */
+/* ===== Responsivo ===== */
 @media (max-width: 768px) {
-    .team-section {
-        flex-direction: column; /* Apila los miembros en pantallas pequeñas */
-        align-items: center; /* Centra los elementos apilados */
-    }
+  .team-section {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .team-member {
-        width: 80%; /* Ocupa más ancho en pantallas pequeñas */
-        max-width: 350px; /* Pero con un máximo para no ser demasiado grande */
-    }
+  .team-member {
+    width: 90%;
+    max-width: 350px;
+  }
 
-    .main-header h1 {
-        font-size: 2.5em;
-    }
+  .page-header h1 {
+    font-size: 2.2rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .main-header h1 {
-        font-size: 2em;
-    }
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
 
-    .main-header p {
-        font-size: 1em;
-    }
+  .page-header p {
+    font-size: 1rem;
+  }
 
-    .social-links a {
-        padding: 6px 10px;
-        font-size: 0.85em;
-    }
+  .social-links a {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
 }

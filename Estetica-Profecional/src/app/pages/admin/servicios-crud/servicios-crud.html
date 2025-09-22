@@ -1,49 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Servicios de Belleza</title>
-    <link rel="stylesheet" href="servicios-crud.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Gestión de Servicios de Belleza</h1>
-        <form id="servicioForm">
-            <input type="hidden" id="servicioId">
-            <div class="form-group">
-                <label for="nombre">Nombre del Servicio:</label>
-                <input type="text" id="nombre" required>
-            </div>
-            <div class="form-group">
-                <label for="descripcion">Descripción:</label>
-                <textarea id="descripcion" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="precio">Precio:</label>
-                <input type="number" id="precio" step="10.000" required>
-            </div>
-            <button type="submit" class="btn btn-save">Guardar Servicio</button>
-        </form>
 
-        <hr>
+  <div class="floating-menu-container">
+    <header class="main-header">
+      <div class="sticky-toolbar">
+        <img src="../../../assent/imagenes/logo/logo.jpg" alt="Clínica Estética" class="logo" />
+        <nav class="menu-links">
+          <a href="../home-admin/home-admin.html">Home</a>
+          <a href="../clientes/clientes.html">Clientes</a>
+          <a href="../servicios-crud/servicios-crud.html">Servicios</a>
+          <a href="../usuario/usuario.html" >Usuario</a>
+        </nav>
+      </div>
+    </header>
+  </div>
+<div class="hero-section">
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestión de Servicios de Belleza</title>
+        <link rel="stylesheet" href="servicios-crud.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Gestión de Servicios de Belleza</h1>
+            <form id="servicioForm">
+                <input type="hidden" id="servicioId">
+                <div class="form-group">
+                    <label for="nombre">Nombre del Servicio:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" step="10.000" required>
+                </div>
+                <button type="submit" class="btn btn-save">Guardar Servicio</button>
+            </form>
 
-        <h2>Listado de Servicios</h2>
-        <table id="servicioTabla">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Precio</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                </tbody>
-        </table>
-    </div>
+            <hr>
 
-    <script src="servicios-crud.js"></script>
-</body>
+            <h2>Listado de Servicios</h2>
+            <table id="servicioTabla">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+
+        <script src="servicios-crud.js"></script>
+    </body>
+</div>
 </html>

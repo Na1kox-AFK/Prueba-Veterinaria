@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendar Hora - Clínica Estética</title>
+  <link rel="stylesheet" href="agendar-hora.css">
+</head>
+<body>
+  <!-- Menú Superior -->
+  <div class="floating-menu-container">
+    <header class="main-header">
+      <div class="sticky-toolbar">
+        <img src="../../../assent/imagenes/logo/logo.jpg" alt="Logo" class="logo">
+        <nav class="menu-links">
+          <a href="../home/home.html">Home</a>
+          <a href="../nosotros/nosotros.html">Nosotros</a>
+          <a href="../blogs/blogs.html">Blogs</a>
+          <a href="../contacto/contacto.html">Contacto</a>
+          <a href="../inicio-sesion/inicio-sesion.html">Iniciar Sesión</a>
+          <a href="../servicios/servicios.html">Servicios</a>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay">
+      <h1 class="hero-title">Agenda tu Hora</h1>
+      <p>Completa el formulario para reservar una hora con nosotros</p>
+    </div>
+  </section>
+
+  <!-- Formulario Agendar Hora -->
+  <main class="agendar-container">
+    <form class="agendar-form" id="agendarForm">
+      <h2>Formulario de Reserva</h2>
+
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Ej: Ana Pérez" required>
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="Ej: ana@correo.com" required>
+
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="Ej: +569 1234 5678" required>
+
+      <label for="servicio">Servicio</label>
+      <select id="servicio" name="servicio" required>
+        <option value="">Seleccione un servicio</option>
+        <option value="facial">Limpieza Facial</option>
+        <option value="depilacion">Depilación</option>
+        <option value="masaje">Masaje Relajante</option>
+        <option value="capilar">Tratamiento Capilar</option>
+      </select>
+
+      <label for="fecha">Fecha</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <label for="hora">Hora</label>
+      <input type="time" id="hora" name="hora" required>
+
+      <button type="submit" class="cta-btn">Reservar Hora</button>
+    </form>
+  </main>
+</body>
+</html>
+<script src="agendar-hora.js"></script>

@@ -1,67 +1,82 @@
-// ====== Configuración inicial ======
+// ====== CONFIGURACIÓN INICIAL ======
 const loginCard = document.getElementById('login-card');
 const registerCard = document.getElementById('register-card');
 const showRegister = document.getElementById('showRegister');
 const showLogin = document.getElementById('showLogin');
 
-// --- Usuarios base ---
+// ====== USUARIOS BASE ADMIN ======
 const usuariosBase = [
-  { nombre: 'Admin Uno', email: 'admin1@clinica.com', password: '123456' },
-  { nombre: 'Admin Dos', email: 'admin2@clinica.com', password: '123456' },
-  { nombre: 'Admin Tres', email: 'admin3@clinica.com', password: '123456' },
+  { nombre: 'Bastian Sanches', email: 'ba.sanches@duocuc.cl', password: 'asd123', rol: 'admin' },
+  { nombre: 'Matias Diaz', email: 'admin2@sb.com', password: '123', rol: 'admin' },
+  { nombre: 'Elias', email: 'admin3@sb.com', password: '123', rol: 'admin' }
 ];
 
-// Cargar usuarios iniciales en localStorage si no existen
-if (!localStorage.getItem('usuarios')) {
-  localStorage.setItem('usuarios', JSON.stringify(usuariosBase));
+// ====== UTILIDADES ======
+function guardarLS(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+function obtenerLS(key, defaultValue = null) {
+  const data = localStorage.getItem(key);
+  return data ? JSON.parse(data) : defaultValue;
+}
+function toggleCards(showLoginCard) {
+  loginCard.style.display = showLoginCard ? 'block' : 'none';
+  registerCard.style.display = showLoginCard ? 'none' : 'block';
 }
 
-// ====== Cambiar entre Login y Registro ======
+// ====== CARGAR USUARIOS BASE SI NO EXISTEN ======
+if (!localStorage.getItem('usuarios')) {
+  guardarLS('usuarios', usuariosBase);
+}
+
+// ====== CAMBIAR ENTRE LOGIN Y REGISTRO ======
 showRegister.addEventListener('click', (e) => {
   e.preventDefault();
-  loginCard.style.display = 'none';
-  registerCard.style.display = 'block';
+  toggleCards(false);
 });
-
 showLogin.addEventListener('click', (e) => {
   e.preventDefault();
-  registerCard.style.display = 'none';
-  loginCard.style.display = 'block';
+  toggleCards(true);
 });
 
-// ====== Manejador de Login ======
+// ====== LOGIN ======
 document.getElementById('loginForm').addEventListener('submit', (e) => {
   e.preventDefault();
 
   const email = document.getElementById('loginEmail').value.trim();
   const password = document.getElementById('loginPassword').value.trim();
 
-  // Obtener usuarios del localStorage
-  const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+  // Obtener usuarios guardados
+  const usuariosGuardados = obtenerLS('usuarios', []);
 
   // Verificar usuario
-  const usuarioEncontrado = usuarios.find(
+  const usuarioEncontrado = usuariosGuardados.find(
     (u) => u.email === email && u.password === password
   );
 
   if (usuarioEncontrado) {
     alert(`✅ Bienvenido ${usuarioEncontrado.nombre}!`);
+
     // Guardar sesión activa
-    localStorage.setItem('usuarioActivo', JSON.stringify(usuarioEncontrado));
+    guardarLS('usuarioActivo', usuarioEncontrado);
 
     // Limpiar formulario
     e.target.reset();
 
-    // Redirigir a home.html después de 1 seg
+    // Redirigir según rol
     setTimeout(() => {
-      window.location.href = '../home/home.html'; // cambia ruta si es necesario
+      if (usuarioEncontrado.rol !== 'user') {
+        window.location.href = '../../admin/home-admin/home-admin.html'; // Admin
+      } else {
+        window.location.href = '../home/home.html'; // Usuario normal
+      }
     }, 1000);
   } else {
     alert('⚠️ Correo o contraseña incorrectos');
   }
 });
 
-// ====== Manejador de Registro ======
+// ====== REGISTRO ======
 document.getElementById('registerForm').addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -69,7 +84,7 @@ document.getElementById('registerForm').addEventListener('submit', (e) => {
   const email = document.getElementById('registerEmail').value.trim();
   const password = document.getElementById('registerPassword').value.trim();
 
-  let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+  let usuarios = obtenerLS('usuarios', []);
 
   // Verificar si ya existe el email
   const existe = usuarios.some((u) => u.email === email);
@@ -79,38 +94,42 @@ document.getElementById('registerForm').addEventListener('submit', (e) => {
     return;
   }
 
-  // Crear nuevo usuario
-  const nuevoUsuario = { nombre: name, email: email, password: password };
+  // Crear usuario normal (rol user)
+  const nuevoUsuario = { nombre: name, email, password, rol: 'user' };
   usuarios.push(nuevoUsuario);
 
-  // Guardar en localStorage
-  localStorage.setItem('usuarios', JSON.stringify(usuarios));
+  guardarLS('usuarios', usuarios);
+  guardarLS('usuarioActivo', nuevoUsuario); // Sesión activa directa
 
   alert(`✅ Cuenta creada para ${name} con email ${email}`);
 
-  // Limpiar formulario y volver al login
   e.target.reset();
-  registerCard.style.display = 'none';
-  loginCard.style.display = 'block';
+  toggleCards(true); // volver al login
 });
 
-// ====== (Opcional) Cerrar sesión desde home.html ======
-/*
-En tu home.html puedes agregar:
-<button onclick="cerrarSesion()">Cerrar Sesión</button>
-
-Y en tu JS:
-*/
+// ====== CERRAR SESIÓN ======
 function cerrarSesion() {
   localStorage.removeItem('usuarioActivo');
-  window.location.href = '../inicio-sesion/inicio-sesion.html'; // vuelve al login
-}
-
-// ====== (Opcional) Protección de home.html ======
-/*
-En tu home.html añade este JS para no entrar sin login:
-
-if (!localStorage.getItem('usuarioActivo')) {
   window.location.href = '../inicio-sesion/inicio-sesion.html';
 }
-*/
+
+// ====== PROTECCIÓN DE PÁGINAS ======
+function protegerPaginaAdmin() {
+  const usuarioActivo = obtenerLS('usuarioActivo');
+  if (!usuarioActivo || usuarioActivo.rol !== 'admin') {
+    window.location.href = '../inicio-sesion/inicio-sesion.html';
+  }
+}
+function protegerPaginaUsuario() {
+  const usuarioActivo = obtenerLS('usuarioActivo');
+  if (!usuarioActivo || usuarioActivo.rol !== 'user') {
+    window.location.href = '../inicio-sesion/inicio-sesion.html';
+  } else {
+    const dynamicLink = document.getElementById('dynamicLink');
+    if (dynamicLink) {
+      dynamicLink.textContent = `Hola, ${usuarioActivo.nombre}`;
+      dynamicLink.href = '#';
+      dynamicLink.style.pointerEvents = 'none';
+    }
+  }
+}

@@ -8,7 +8,71 @@ body {
     padding: 20px;
 }
 
+/* ===== Menú superior ===== */
+.floating-menu-container {
+  position: fixed;
+  top: 32px;
+  width: 100%;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+}
+
+/* Pill header */
+.main-header {
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 40px;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(234, 177, 198, 0.15);
+}
+
+/* Toolbar interna */
+.sticky-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+
+/* Logo */
+.logo {
+  height: 56px;
+  width: 56px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* Links del menú: evitar quiebre de línea */
+.menu-links {
+  display: flex;
+  gap: 18px;
+}
+
+.menu-links a {
+  color: #d6336c;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+  text-decoration: none; 
+
+  
+}
+
+.menu-links a:hover,
+.menu-links a.active {
+  background: #fdb6c3;
+  color: #fff;
+}
+
+.hero-section {
+    padding-top: 100px;
+}
+
 .container {
+    padding-top: 300px; /* Espacio para el menú fijo */
+    padding-bottom: 300px;
     max-width: 800px;
     margin: auto;
     background: #fff;

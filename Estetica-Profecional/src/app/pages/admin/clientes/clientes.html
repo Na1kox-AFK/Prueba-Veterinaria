@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clientes - Clínica Estética</title>
+  <link rel="stylesheet" href="clientes.css">
+</head>
+<body>
+  <!-- Menú Superior -->
+  <div class="floating-menu-container">
+    <header class="main-header">
+      <div class="sticky-toolbar">
+        <img src="../../../assent/imagenes/logo/logo.jpg" alt="Clínica Estética" class="logo" />
+        <nav class="menu-links">
+          <a href="../home-admin/home-admin.html">Home</a>
+          <a href="../clientes/clientes.html">Clientes</a>
+          <a href="../servicios-crud/servicios-crud.html">Servicios</a>
+          <a href="../usuario/usuario.html" >Usuario</a>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-overlay">
+      <h1 class="hero-title">Nuestros Clientes</h1>
+      <p>Listado de clientes y sus servicios agendados</p>
+    </div>
+  </section>
+
+  <!-- Lista de clientes -->
+  <main class="clientes-container">
+    <h2>📋 Lista de Reservas</h2>
+    <div class="clientes-table-wrapper">
+      <table class="clientes-table" id="clientesTable">
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Servicio</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rellenado dinámicamente por JS -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="clientes.js"></script>
+</body>
+</html>

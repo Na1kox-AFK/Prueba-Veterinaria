@@ -113,6 +113,8 @@ body { font-family: 'Inter', sans-serif; }
   margin-left: auto;
   margin-right: auto;
   margin-bottom: auto;
+  border-radius: 16px;
+  object-fit: cover;
 }
 
 .admin-card h3 {

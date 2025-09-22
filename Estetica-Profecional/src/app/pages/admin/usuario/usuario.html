@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil de Usuario</title>
+  <link rel="stylesheet" href="usuario.css" />
+</head>
+
+<!-- Menú Superior -->
+<div class="floating-menu-container">
+<header class="main-header">
+    <div class="sticky-toolbar">
+    <img src="../../../assent/imagenes/logo/logo.jpg" alt="Clínica Estética" class="logo" />
+    <nav class="menu-links">
+        <a href="../home-admin/home-admin.html">Home</a>
+        <a href="../clientes/clientes.html">Clientes</a>
+        <a href="../servicios-crud/servicios-crud.html">Servicios</a>
+        <a href="../usuario/usuario.html" >Usuario</a>
+    </nav>
+    </div>
+</header>
+</div>
+<div class="hero-section"></div>
+<body onload="cargarUsuario()">
+
+  <div class="usuario-container">
+    <form id="usuarioForm" class="usuario-form">
+        <h2>Perfil de Usuario</h2>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required disabled /> <!-- Email fijo -->
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" required />
+        <button type="button" id="togglePassword" style="margin-bottom:16px; background:#eee; border:none; padding:8px 12px; border-radius:8px; cursor:pointer;">
+        👁️ Mostrar
+        </button>
+
+
+      <button type="submit" class="cta-btn">Guardar cambios</button>
+    </form>
+
+    <button onclick="cerrarSesion()" class="cta-btn" style="margin-top:16px; background:#666;">
+      Cerrar sesión
+    </button>
+  </div>
+
+  <script src="usuario.js"></script>
+</body>
+</html>
