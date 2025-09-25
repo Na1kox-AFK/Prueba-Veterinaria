@@ -15,6 +15,6 @@ Sitio web simple para prueba de Ingeniería en Informática.
 
 
 =======
-# Prueba-Veterinaria
+
 Formulario para prueba de Fullstack2
 
